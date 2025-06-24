@@ -143,7 +143,6 @@ submitForm.addEventListener("click",(event)=>{
     } else {
         addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,false);
     }
-    console.log(myLib)
     displayBooks()
     formBookAuthor.value = ""
     formBookName.value = ""
