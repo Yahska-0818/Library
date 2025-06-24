@@ -28,7 +28,7 @@ body {
     background-image: url("wooden-background.jpg");
     display: flex;
     flex-direction: column;
-    gap: 20vh;
+    gap: 4vh;
     color: white;
 }
 
@@ -65,7 +65,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20vh;
+    gap: 5vh;
 }
 
 .bookshelves svg{
