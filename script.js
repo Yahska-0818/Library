@@ -25,9 +25,7 @@ function Book(name,author,pages,readOrNot) {
 
 function addBooksToLib(name,author,pages,readOrNot) {
     const newBook = new Book(name,author,pages,readOrNot)
-    if (myLib.length < 10) {
-        myLib.push(newBook)
-    }
+    myLib.push(newBook)
 }
 
 function displayBooks() {
