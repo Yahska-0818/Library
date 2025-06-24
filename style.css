@@ -103,7 +103,7 @@ body {
     width: 20vh;
     height: 6vh;
     font-size: 3vh;
-    font-family: 600;
+    font-weight: 600;
     box-shadow: #223540 2px 3px 10px 1px;
     transition: transform 0.3s ease;
     font-family: "Truculenta", sans-serif;
@@ -151,4 +151,22 @@ input[type="radio"] {
     font: 2vh;
     border: none;
     border-radius: 1vh;
+    box-shadow: black 2px 3px 10px 1px;
+    transition: transform 0.3s ease;
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: white;
 }
+
+.removeButton:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+}
+
+.toggleReadButton:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+}
+
+

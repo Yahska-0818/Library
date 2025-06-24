@@ -27,7 +27,9 @@ function Book(name,author,pages,readOrNot) {
 
 function addBooksToLib(name,author,pages,readOrNot) {
     const newBook = new Book(name,author,pages,readOrNot)
-    myLib.push(newBook)
+    if (myLib.length < 10) {
+        myLib.push(newBook)
+    }
 }
 
 function displayBooks() {
@@ -42,8 +44,8 @@ function displayBooks() {
         const bookPages = document.createElement('p')
         const bookReadOrNot = document.createElement('p')
         let bookButtons = document.createElement('div')
-        const removeButton = document.createElement('button')
-        const toggleReadButton = document.createElement('button')
+        let removeButton = document.createElement('button')
+        let toggleReadButton = document.createElement('button')
 
         removeButton.textContent = "Remove book"
         toggleReadButton.textContent = "Toggle read"
@@ -56,6 +58,9 @@ function displayBooks() {
         removeButton.classList = "removeButton"
         toggleReadButton.classList = "toggleReadButton"
 
+        removeButton.dataset.index = myLib[i].bookId
+        toggleReadButton.dataset.index = myLib[i].bookId
+
         bookName.textContent = `${myLib[i].bookName}`
         bookAuthor.textContent = `${myLib[i].bookAuthor}`
         bookPages.textContent = `${myLib[i].bookPages} pages`
@@ -63,7 +68,7 @@ function displayBooks() {
             bookReadOrNot.textContent = "Read"
         }
         else {
-            bookReadOrNot.textContent = "Not Read"
+            bookReadOrNot.textContent = "Unread"
         }
         
         book.appendChild(bookName)
@@ -80,6 +85,7 @@ function displayBooks() {
         book.style.flexDirection = "column"
         book.style.fontSize = "2vh"
         book.style.gap = "1vh"
+        book.dataset.index = myLib[i].bookId
         books1.style.display = "flex"
         books1.style.justifyContent = "space-evenly"
         books2.style.display = "flex"
@@ -92,6 +98,34 @@ function displayBooks() {
             books2.appendChild(book)
             books2Count += 1
         }
+    }
+    const removeButtons = document.getElementsByClassName('removeButton')
+    for (let i = 0; i < removeButtons.length; i++) {
+        removeButtons[i].addEventListener("click",()=>{
+            indexId = removeButtons[i].dataset.index
+            for (let j = 0; j < myLib.length; j++) {
+                if (myLib[j].bookId === indexId) {
+                    myLib.splice(j,1)
+                }
+            }
+            displayBooks()
+        })
+    }
+    const toggleReadButtons = document.getElementsByClassName('toggleReadButton')
+    for (let i = 0; i < toggleReadButtons.length; i++) {
+        toggleReadButtons[i].addEventListener("click",()=>{
+            indexId = toggleReadButtons[i].dataset.index
+            for (let j = 0; j < myLib.length; j++) {
+                if (myLib[j].bookId === indexId) {
+                    if (myLib[j].bookReadOrNot) {
+                        myLib[j].bookReadOrNot = false
+                    } else {
+                        myLib[j].bookReadOrNot = true
+                    }
+                }
+            }
+            displayBooks()
+        })
     }
 }
 
