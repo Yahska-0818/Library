@@ -8,7 +8,6 @@ let books2 = document.querySelector(".books2")
 let formBookName = document.getElementById("bookName")
 let formBookAuthor = document.getElementById("authorName")
 let formBookPage = document.getElementById("pageCount")
-let formBookReadOrNot = document.getElementById("read")
 let books1Count = 0
 let books2Count = 0
 
@@ -87,8 +86,12 @@ addButton.addEventListener("click",()=>{
 submitForm.addEventListener("click",(event)=>{
     bookForm.style.display = "none"
     event.preventDefault()
-    addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,formBookReadOrNot.value)
-
+    let formBookReadOrNot = document.querySelector('input[name="readStatus"]:checked').value;
+    if (formBookReadOrNot.value === "read") {
+        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,true)
+    } else {
+        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,false)
+    }
     console.log(myLib)
     displayBooks()
 })
