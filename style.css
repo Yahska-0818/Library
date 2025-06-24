@@ -71,6 +71,7 @@ body {
 .bookshelves svg{
     width: 130vh;
     height: 22vh;
+    align-self: center;
 }
 
 .bookForm {
