@@ -73,7 +73,7 @@ body {
 
 .bookForm {
     position: absolute;
-    background-color: white;
+    background-color: #A3B18A;
     color: black;
     padding: 3vh;
     border-radius: 1vh;
@@ -85,7 +85,7 @@ body {
     height: 60vh;
     font-size: 5vh;
     justify-content: space-evenly;
-    transform: translate(65vh,15vh);
+    transform: translate(0,15vh);
     position: fixed;
     z-index: 999;
 }
@@ -238,7 +238,7 @@ input[type="radio"] {
 
     .bookForm {
         position: absolute;
-        background-color: white;
+        background-color: #A3B18A;
         color: black;
         border-radius: 1vh;
         display: none;
