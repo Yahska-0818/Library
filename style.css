@@ -1,0 +1,141 @@
+:root {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+body {
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-image: url("wooden-background.jpg");
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 2vh 0vh;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 6vh;
+    font-weight: 800;
+}
+
+.add {
+    border-radius: 10vh;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    font-size: 3vh;
+    font-family: 600;
+    box-shadow: #223540 2px 3px 10px 1px;
+    transition: transform 0.3s ease;
+}
+
+.add:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+}
+
+.bookshelves {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.bookshelves svg{
+    width: 130vh;
+    height: 22vh;
+}
+
+.bookForm {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 3vh;
+    border-radius: 1vh;
+    display: none;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    width: 60vh;
+    height: 60vh;
+    font-size: 5vh;
+    justify-content: space-evenly;
+    transform: translate(65vh,15vh);
+}
+
+.bookForm p {
+    width: 50vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit {
+    border-radius: 1vh;
+    border: none;
+    width: 20vh;
+    height: 6vh;
+    font-size: 3vh;
+    font-family: 600;
+    box-shadow: #223540 2px 3px 10px 1px;
+    transition: transform 0.3s ease;
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: white;
+}
+
+.submit:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+}
+
+input {
+    font-size: 1.5vh;
+    width: 25vh;
+    border-radius: 1vh;
+    border: 0.2vh solid #321d16;
+    color: #321d16;
+    padding: 1vh;
+    font-size: 3vh;
+    font-family: "Truculenta", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: white;
+}
+
+input[type="radio"] {
+    width: 5vh;
+    height: 5vh;
+}
+
+#radioInput {
+    display: flex;
+    align-items: center;
+}
