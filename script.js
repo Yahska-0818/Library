@@ -86,12 +86,16 @@ addButton.addEventListener("click",()=>{
 submitForm.addEventListener("click",(event)=>{
     bookForm.style.display = "none"
     event.preventDefault()
-    let formBookReadOrNot = document.querySelector('input[name="readStatus"]:checked').value;
-    if (formBookReadOrNot.value === "read") {
-        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,true)
+    let formBookReadOrNot = document.querySelector('input[name="readStatus"]:checked');
+
+    if (formBookReadOrNot.value == "read") {
+        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,true);
     } else {
-        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,false)
+        addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,false);
     }
     console.log(myLib)
     displayBooks()
+    formBookAuthor.value = ""
+    formBookName.value = ""
+    formBookPage.value = ""
 })
