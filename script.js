@@ -1,6 +1,7 @@
 const addButton = document.querySelector(".add")
 const bookForm = document.querySelector(".bookForm")
 const submitForm = document.querySelector(".submit")
+const closeForm = document.querySelector(".close")
 let shelf = document.querySelector(".shelf")
 let formBookName = document.getElementById("bookName")
 let formBookAuthor = document.getElementById("authorName")
@@ -121,6 +122,14 @@ submitForm.addEventListener("click",(event)=>{
     } else {
         addBooksToLib(formBookName.value,formBookAuthor.value,formBookPage.value,false);
     }
+    displayBooks()
+    formBookAuthor.value = ""
+    formBookName.value = ""
+    formBookPage.value = ""
+})
+
+closeForm.addEventListener("click",()=>{
+    bookForm.style.display = "none"
     displayBooks()
     formBookAuthor.value = ""
     formBookName.value = ""

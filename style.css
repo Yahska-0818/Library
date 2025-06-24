@@ -25,11 +25,12 @@ body {
     font-family: "Truculenta", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-image: url("wooden-background.jpg");
+    background-image: url("wooden-background1.jpg");
     display: flex;
     flex-direction: column;
     gap: 4vh;
     color: white;
+    align-items: center;
 }
 
 @media (width > 700px) {
@@ -85,6 +86,8 @@ body {
     font-size: 5vh;
     justify-content: space-evenly;
     transform: translate(65vh,15vh);
+    position: fixed;
+    z-index: 999;
 }
 
 .bookForm p {
@@ -93,7 +96,7 @@ body {
     justify-content: space-between;
 }
 
-.submit {
+.submit, .close {
     border-radius: 1vh;
     border: none;
     width: 20vh;
@@ -108,7 +111,7 @@ body {
     background-color: white;
 }
 
-.submit:hover {
+.submit:hover, .close:hover {
     cursor: pointer;
     transform: translateY(-4px);
 }
@@ -190,6 +193,11 @@ input[type="radio"] {
 
 
 @media (width < 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .header {
         display: flex;
         justify-content: center;
@@ -244,6 +252,8 @@ input[type="radio"] {
         margin-top: 10vh;
         align-items: start;
         padding: 3vh;
+        position: fixed;
+        z-index: 999;
     }
 
     .bookForm p {
@@ -275,6 +285,27 @@ input[type="radio"] {
     }
 
     .submit:hover {
+        cursor: pointer;
+        transform: translateY(-4px);
+    }
+
+    .close {
+        border-radius: 1vh;
+        border: none;
+        width: 20vh;
+        height: 6vh;
+        font-size: 3vh;
+        font-weight: 600;
+        box-shadow: #223540 2px 3px 10px 1px;
+        transition: transform 0.3s ease;
+        font-family: "Truculenta", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background-color: white;
+        align-self: center;
+    }
+
+    .close:hover {
         cursor: pointer;
         transform: translateY(-4px);
     }
