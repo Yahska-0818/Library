@@ -41,6 +41,20 @@ function displayBooks() {
         const bookAuthor = document.createElement('p')
         const bookPages = document.createElement('p')
         const bookReadOrNot = document.createElement('p')
+        let bookButtons = document.createElement('div')
+        const removeButton = document.createElement('button')
+        const toggleReadButton = document.createElement('button')
+
+        removeButton.textContent = "Remove book"
+        toggleReadButton.textContent = "Toggle read"
+
+        bookButtons.appendChild(removeButton)
+        bookButtons.appendChild(toggleReadButton)
+
+        bookButtons.classList = "bookButtons"
+
+        removeButton.classList = "removeButton"
+        toggleReadButton.classList = "toggleReadButton"
 
         bookName.textContent = `${myLib[i].bookName}`
         bookAuthor.textContent = `${myLib[i].bookAuthor}`
@@ -56,6 +70,7 @@ function displayBooks() {
         book.appendChild(bookAuthor)
         book.appendChild(bookPages)
         book.appendChild(bookReadOrNot)
+        book.appendChild(bookButtons)
 
         book.style.backgroundColor = "#223540"
         book.style.padding = "1.8vh"
@@ -64,6 +79,7 @@ function displayBooks() {
         book.style.display = "flex"
         book.style.flexDirection = "column"
         book.style.fontSize = "2vh"
+        book.style.gap = "1vh"
         books1.style.display = "flex"
         books1.style.justifyContent = "space-evenly"
         books2.style.display = "flex"

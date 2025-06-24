@@ -65,7 +65,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 5vh;
+    gap: 1vh;
 }
 
 .bookshelves svg{
@@ -139,4 +139,16 @@ input[type="radio"] {
 #radioInput {
     display: flex;
     align-items: center;
+}
+
+.bookButtons {
+    display: flex;
+    gap: 1vh;
+}
+
+.removeButton,.toggleReadButton {
+    padding: 1vh;
+    font: 2vh;
+    border: none;
+    border-radius: 1vh;
 }
